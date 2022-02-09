@@ -1,8 +1,11 @@
 import React from 'react';
 
 function Footer() {
-  return <div>
-      <h1>footer</h1>
+  return <div className='footer'>
+      {/* <h1>footer</h1> */}
+      <p>Design & developed by </p>
+      <hr />
+      <p>vip</p>
   </div>;
 }
 

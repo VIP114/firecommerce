@@ -1,0 +1,43 @@
+
+/* this css file is included in app.js */
+.product-img{
+    height: 200px;
+    width: 150px;
+}
+.product{
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    
+}
+.product p{
+    min-height: 3rem;
+}
+
+.product:hover .product-actions{
+    opacity: 1;
+}
+.product-actions{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.753);
+    height: 100% ;
+    justify-content: center;
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    color: white;
+    font-weight: bold !important;
+}
+
+.button1{
+    background-color: rgb(102, 81, 121);
+    color:white;
+    border-color: rgb(26, 22, 22);
+    border-radius: 2px;
+
+}
+.button1:hover{
+    background-color: rgb(109, 13, 199);
+}

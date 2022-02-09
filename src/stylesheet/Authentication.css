@@ -1,0 +1,101 @@
+.form-control {
+  box-shadow: none;
+}
+.form-control:focus {
+  box-shadow: none !important;
+  margin-top: 15px !important ;
+}
+.registration-form {
+  background-color: white;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  padding: 20px;
+  margin: 20px;
+  /* z-index: 999 !important; */
+}
+.register-parent {
+  /* min-height: 100vh; */
+      /* display: flex;
+    align-items: center; */
+  margin-top: 165px;
+  background-color: rgb(179, 205, 230);
+}
+html {
+  background-color: rgb(179, 205, 230);
+}
+.register-parent .row {
+  /* height: 100vh;
+    display: flex;
+    align-items: center; */
+  /* z-index: 999 !important; */
+}
+
+/* body html{
+    overflow-x: hidden !important;
+} */
+
+.register-top {
+  height: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: rgb(192, 103, 233);
+  /* z-index: 0 !important; */
+}
+.z1 {
+  z-index: 1;
+}
+
+/* for login page css */
+
+.login-form {
+  background-color: white;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  padding: 20px;
+  margin: 20px;
+  /* z-index: 999 !important; */
+}
+.login-parent {
+  /* min-height: 100vh; */
+  /* display: flex;
+    align-items: center; */
+  margin-top: 165px;
+  /* background-color: rgb(192, 103, 233); */
+  background-color: rgb(242, 244, 247);
+  /* background-color: rgb(179, 205, 230); */
+}
+html {
+  /* background-color: rgb(192, 103, 233); */
+  background-color: rgb(242, 244, 247);
+}
+.login-parent .row {
+  /* height: 100vh;
+    display: flex;
+    align-items: center; */
+  /* z-index: 999 !important; */
+}
+
+/* body html{
+    overflow-x: hidden !important;
+} */
+
+.login-bottom {
+  height: 55%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(179, 205, 230);
+  /* z-index: 0 !important; */
+}
+.z1 {
+  z-index: 1;
+}
+.textDecoration{
+    text-decoration: none;
+    color: rgb(139, 58, 58);
+}

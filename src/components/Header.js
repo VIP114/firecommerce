@@ -1,27 +1,41 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
+import {FaBars,FaCartPlus} from "react-icons/fa"
+import { useSelector } from 'react-redux';
 function Header() {
-    return (<div>
+
+    const {cartItems} = useSelector(state=> state.cartReducer)
+    const {user} = JSON.parse(localStorage.getItem('currentUser'))
+
+    const logout =()=>{
+        localStorage.removeItem('currentUser')
+        window.location.reload( )
+    }
+
+    return (
+    <div className='header'> 
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">Navbar</a>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
+                <Link className="navbar-brand" to="/">F-Commerce </Link>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"><FaBars size={25} color='white'/> </span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav">
+                    <ul className="navbar-nav ms-auto"> 
+                    {/* ms-auto use for shift all the details to right side */}
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">Home</a>
+                            <Link className="nav-link active" aria-current="page" to="/">{user.email.substring(0,user.email.length-10)}</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Features</a>
+                            <Link className="nav-link" to="/">Order</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Pricing</a>
+                            <Link className="nav-link" to="/" onClick={logout}>logout</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link disabled">Disabled</a>
+                            <Link className="nav-link" to="/cart"><FaCartPlus /> {cartItems.length}</Link>
                         </li>
+                        
                     </ul>
                 </div>
             </div>

@@ -1,9 +1,66 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import Loder from '../components/loder';
+import { toast } from 'react-toastify';
 
 function RegisterPage() {
-  return <div>
-      <h1>Registerpage</h1>
-  </div>;
+  const [email,setEmail] = useState('')
+  const [password,setPassword] = useState('')
+  const [cpassword,setCPassword] = useState('')
+  const auth = getAuth()
+  const [loading,setLoading]=useState(false)
+
+  const register=async()=>{
+    try {
+      setLoading(true)
+      const result= await createUserWithEmailAndPassword(auth, email, password)
+      console.log(result);
+      setLoading(false)
+      // alert('Registration Successful')
+      toast.success('Registration successfully')
+      
+      
+      
+    } catch (error) {
+      console.log(error);
+      // alert('Registration failed: ' + error)
+      toast.error('Registration fail')
+      setLoading(false)
+      
+    }
+  }
+
+  return (
+    <div className='register-parent'>
+      {loading && (<Loder/>)}
+      <div className="register-top">
+
+      </div>
+      <div className="row justify-content-center">
+        <div className="col-md-5">
+        <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_yr6zz3wv.json"  background="transparent"  speed="1"    loop  autoplay></lottie-player>
+
+        </div>
+        <div className="col-md-4 z1">
+          <div className='registration-form'>
+            <h2>Register</h2>
+            <hr />
+            <input type="text" className='form-control' placeholder='email' value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
+            <input type="password" className='form-control' placeholder='password' value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
+            <input type="password" className='form-control' placeholder='confirm password' value={cpassword} onChange={(e)=>{setCPassword(e.target.value)}}/>
+            <button className='btn btn-success mt-2' onClick={register}>Register</button>
+            <hr />
+            <Link to='/login' className='textDecoration'>Click here to login</Link>
+
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default RegisterPage;
