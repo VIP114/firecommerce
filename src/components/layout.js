@@ -8,6 +8,7 @@ function Layout(props) {
     {props.loading && <Loder/>}
       <Header/>
       <div className="content">
+        {/* to show homepage info */}
           {props.children}
       </div>
       {/* <Footer/> */}

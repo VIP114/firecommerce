@@ -48,7 +48,7 @@ function LoginPage() {
             <h2>Login</h2>
             <hr />
             <input type="text" className='form-control' placeholder='email' value={email} onChange={(e) => { setEmail(e.target.value) }} />
-            <input type="text" className='form-control' placeholder='password' value={password} onChange={(e) => { setPassword(e.target.value) }} />
+            <input type="password" className='form-control' placeholder='password' value={password} onChange={(e) => { setPassword(e.target.value) }} />
             {/* <input type="text" className='form-control' placeholder='confirm password' value={password} onChange={(e)=>{setCPassword(e.target.value)}}/> */}
             <button className='btn btn-success mt-2' onClick={login}>login</button>
             <hr />
